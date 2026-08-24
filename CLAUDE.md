@@ -29,6 +29,12 @@ customer/           고객센터 (견적문의 — 외부 폼 연결)
 css/  js/  images/  공통 자산
 ```
 
+## 배포
+
+- GitHub Pages: https://sichiro.github.io/bpt-website/ (main 브랜치 루트, push하면 자동 배포)
+- 리포지토리: https://github.com/sichiro/bpt-website (public — 무료 Pages 조건)
+- 정식 오픈 시 호스팅 재검토 (클라이언트 도메인·관리 주체 확인 후 Cloudflare Pages 또는 cafe24)
+
 ## 규칙
 
 - 모든 콘텐츠는 한국어. `lang="ko"`, UTF-8.
