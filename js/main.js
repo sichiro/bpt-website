@@ -1,3 +1,9 @@
+// 헤더 스크롤 상태
+const header = document.getElementById('header');
+const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 40);
+window.addEventListener('scroll', onScroll, { passive: true });
+onScroll();
+
 // 모바일 메뉴 토글
 const toggle = document.getElementById('navToggle');
 const gnb = document.getElementById('gnb');
