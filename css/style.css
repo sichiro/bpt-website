@@ -79,7 +79,7 @@ p { text-wrap: pretty; }
 	position: fixed;
 	top: 0; left: 0; right: 0;
 	z-index: 100;
-	color: var(--ink);
+	color: var(--on-dark);
 	border-bottom: 1px solid transparent;
 	transition: background .3s var(--ease), color .3s, border-color .3s;
 }
@@ -110,7 +110,7 @@ p { text-wrap: pretty; }
 	text-decoration: none !important;
 	transition: background .25s, color .25s;
 }
-.header:not(.scrolled) .gnb-cta:hover { background: var(--ink); color: var(--on-dark); }
+.header:not(.scrolled) .gnb-cta:hover { background: var(--on-dark); color: var(--ink); }
 .header.scrolled .gnb-cta { background: var(--ink); color: var(--on-dark); border-color: var(--ink); }
 .header.scrolled .gnb-cta:hover { background: var(--accent); border-color: var(--accent); }
 
@@ -133,8 +133,8 @@ p { text-wrap: pretty; }
 	align-items: flex-end;
 	min-height: min(100dvh, 880px);
 	padding: calc(var(--header-h) + 80px) 0 96px;
-	color: var(--ink);
-	background: var(--bg-tint);
+	color: var(--on-dark);
+	background: var(--ink);
 	overflow: hidden;
 }
 .hero-photo {
@@ -143,18 +143,19 @@ p { text-wrap: pretty; }
 	width: 100%; height: 100%;
 	object-fit: cover;
 	object-position: center;
+	filter: brightness(1.35) contrast(.85); /* 기업 인상이 어두워지지 않도록 사진 밝기 보정. 값은 1.2~1.5 사이에서 조정 */
 }
 .hero::after {
 	content: "";
 	position: absolute;
 	inset: 0;
 	background:
-		linear-gradient(90deg, rgba(250,250,248,.9) 0%, rgba(250,250,248,.72) 42%, rgba(250,250,248,.1) 72%, rgba(250,250,248,0) 100%),
-		linear-gradient(180deg, rgba(250,250,248,.5) 0%, rgba(250,250,248,0) 30%);
+		linear-gradient(90deg, rgba(28,34,44,.5) 0%, rgba(28,34,44,.25) 55%, rgba(28,34,44,.05) 100%),
+		linear-gradient(180deg, rgba(28,34,44,.2) 0%, rgba(28,34,44,0) 35%);
 }
 .hero-content { position: relative; z-index: 1; width: 100%; }
 .hero-title { font-size: clamp(36px, 4.6vw, 60px); font-weight: 700; max-width: 16ch; }
-.hero-desc { margin-top: 24px; max-width: 34ch; font-size: 18px; line-height: 1.7; color: var(--ink-2); }
+.hero-desc { margin-top: 24px; max-width: 34ch; font-size: 18px; line-height: 1.7; color: rgba(255,255,255,.85); }
 .hero-actions { margin-top: 40px; display: flex; align-items: center; gap: 32px; flex-wrap: wrap; }
 
 /* ================= 성능점검 의무화 ================= */
