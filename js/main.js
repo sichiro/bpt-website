@@ -11,20 +11,20 @@ const gnb = document.getElementById('gnb');
 toggle.addEventListener('click', () => {
 	const open = gnb.classList.toggle('open');
 	toggle.setAttribute('aria-expanded', open);
+	toggle.setAttribute('aria-label', open ? '메뉴 닫기' : '메뉴 열기');
 });
 
 gnb.addEventListener('click', (e) => {
-	if (e.target.tagName === 'A') gnb.classList.remove('open');
+	if (e.target.tagName === 'A') toggle.click();
 });
 
-// 스크롤 리빌
+// 현재 섹션 표시
+const links = [...gnb.querySelectorAll('a[href^="#"]')];
+const sections = links.map((a) => document.querySelector(a.hash)).filter(Boolean);
 const observer = new IntersectionObserver((entries) => {
 	entries.forEach((entry) => {
-		if (entry.isIntersecting) {
-			entry.target.classList.add('on');
-			observer.unobserve(entry.target);
-		}
+		const link = links.find((a) => a.hash === '#' + entry.target.id);
+		link.toggleAttribute('aria-current', entry.isIntersecting);
 	});
-}, { threshold: 0.15 });
-
-document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+}, { rootMargin: '-40% 0px -55% 0px' });
+sections.forEach((s) => observer.observe(s));
