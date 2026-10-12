@@ -1,6 +1,7 @@
 // 헤더 스크롤 상태
 const header = document.getElementById('header');
-const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 40);
+const solid = header.classList.contains('solid'); // 하위 페이지: 히어로 없음, 항상 흰 배경
+const onScroll = () => header.classList.toggle('scrolled', solid || window.scrollY > 40);
 window.addEventListener('scroll', onScroll, { passive: true });
 onScroll();
 
