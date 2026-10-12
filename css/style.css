@@ -260,6 +260,8 @@ p { text-wrap: pretty; }
 .contact-mail { display: block; margin-top: 6px; font-size: 16px; color: var(--ink-2); }
 .contact em { margin-left: 4px; font-size: 13px; font-weight: 400; color: var(--ink-3); }
 .contact .btn { margin-top: 32px; }
+.contact-guide { margin-top: 32px; padding-top: 20px; border-top: 1px solid var(--line); font-size: 14px; color: var(--ink-2); }
+.contact-guide ul { margin-top: 10px; padding-left: 18px; display: grid; gap: 4px; list-style: disc; }
 
 /* ================= 푸터 ================= */
 .footer { padding: 56px 0 64px; border-top: 1px solid var(--line); font-size: 14px; color: var(--ink-2); }
@@ -267,7 +269,9 @@ p { text-wrap: pretty; }
 .footer-logo { font-size: 20px; font-weight: 800; color: var(--ink); }
 .footer-logo span { margin-left: 8px; font-size: 13px; font-weight: 500; color: var(--ink-2); }
 .footer-info { grid-column: 1; display: flex; flex-direction: column; gap: 4px; }
-.copyright { grid-column: 2; grid-row: 1 / 3; align-self: end; color: var(--ink-3); }
+.footer-links { grid-column: 1; display: flex; gap: 20px; }
+.footer-links a { color: var(--ink-2); }
+.copyright { grid-column: 2; grid-row: 1 / 4; align-self: end; color: var(--ink-3); }
 
 /* ================= 모션 억제 ================= */
 @media (prefers-reduced-motion: reduce) {
